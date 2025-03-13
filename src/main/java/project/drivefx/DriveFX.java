@@ -1,7 +1,6 @@
 package project.drivefx;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
@@ -13,14 +12,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.TilePane;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import javax.tools.Tool;
 import java.io.IOException;
 
 public class DriveFX extends Application {

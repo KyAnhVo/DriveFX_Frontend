@@ -1,4 +1,4 @@
-package project.drivefx;
+package project.drivefx.backend;
 import java.io.*;
 import java.net.*;
 import org.json.JSONObject;
@@ -7,8 +7,13 @@ public class UserManager {
     final String email, homeDir;
     String currDir;
 
-    final static String awsLoginInfoAPI = "https://xdrp5nonz8.execute-api.us-east-2.amazonaws.com/default/getUserLoginInfo";
+    final static String awsLoginInfoAPI =
+            "https://xdrp5nonz8.execute-api.us-east-2.amazonaws.com/default/getUserLoginInfo";
 
+    /**
+     * FOR DEBUG AND TESTING ONLY
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             UserManager user = UserManager.login("tommyvo0406@gmail.com", "Aavn!12345");
@@ -33,16 +38,26 @@ public class UserManager {
         return homeDir;
     }
 
+    /**
+     * Login using user's email and password. If credentials are good, return. If credentials are bad,
+     * throw error.
+     * @param email
+     * @param password
+     * @return
+     * @throws Exception
+     */
     public static UserManager login(String email, String password) throws Exception {
         HttpURLConnection conn = sendLoginInfo(email, password);
-        try {
-            return sendLoginInfoAPI(conn);
-        }
-        catch (Exception e) {
-            throw e;
-        }
+        return getUserVerification(conn);
     }
 
+    /**
+     * Send user's login info to AWS API.
+     * @param email
+     * @param password
+     * @return
+     * @throws Exception
+     */
     private static HttpURLConnection sendLoginInfo(String email, String password) throws Exception {
         URI uri = new URI(awsLoginInfoAPI);
 
@@ -64,7 +79,13 @@ public class UserManager {
         return connection;
     }
 
-    private static UserManager sendLoginInfoAPI(HttpURLConnection conn) throws Exception {
+    /**
+     * Receive AWS API's respons accordingly
+     * @param conn
+     * @return
+     * @throws Exception
+     */
+    private static UserManager getUserVerification(HttpURLConnection conn) throws Exception {
         int responseCode = conn.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK) {
             // get info response into a JSON object

@@ -14,4 +14,6 @@ module project.drivefx {
 
     opens project.drivefx to javafx.fxml;
     exports project.drivefx;
+    exports project.drivefx.backend;
+    opens project.drivefx.backend to javafx.fxml;
 }
