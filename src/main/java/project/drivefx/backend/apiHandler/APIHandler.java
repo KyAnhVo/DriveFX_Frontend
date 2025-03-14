@@ -1,9 +1,16 @@
-package project.drivefx.backend;
+package project.drivefx.backend.apiHandler;
 import java.io.*;
 import java.net.*;
 import org.json.JSONObject;
 
 public class APIHandler {
+
+    public static HttpURLConnection sendHttpRequest(Jsonable object, String url, String requestMethod) throws Exception {
+        HttpURLConnection conn = setupConnection(url, requestMethod, true);
+        JSONObject request = object.toJSON();
+        sendRequest(conn, request);
+        return conn;
+    }
 
     /**
      * Get response from conn in the form of a JSONObject.
@@ -11,7 +18,7 @@ public class APIHandler {
      * @return
      * @throws Exception
      */
-    public static JSONObject getJSONObject (HttpURLConnection conn) throws Exception {
+    public static JSONObject getServerResponse(HttpURLConnection conn) throws Exception {
         int responseCode = conn.getResponseCode();
 
         switch (responseCode) {
@@ -40,7 +47,7 @@ public class APIHandler {
      * @param doOutput
      * @return
      */
-    public static HttpURLConnection setupConnection(String apiEndpoint, String httpMethod, boolean doOutput) throws Exception {
+    private static HttpURLConnection setupConnection(String apiEndpoint, String httpMethod, boolean doOutput) throws Exception {
         URI uri = new URI(apiEndpoint);
         URL url = uri.toURL();
 
@@ -57,7 +64,7 @@ public class APIHandler {
      * @param conn
      * @param jsonPackage
      */
-    public static void sendJSONObject(HttpURLConnection conn, JSONObject jsonPackage) throws Exception {
+    private static void sendRequest(HttpURLConnection conn, JSONObject jsonPackage) throws IOException {
         OutputStream os = conn.getOutputStream();
         os.write(jsonPackage.toString().getBytes());
         os.close();
