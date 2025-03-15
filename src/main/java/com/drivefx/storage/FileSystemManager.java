@@ -24,6 +24,23 @@ public class FileSystemManager {
                     new AuthenticationService("tommyvo0406@gmail.com", "tommyvo0406@gmail.com/")
             );
             fileSystemManager.printDirectoryTree();
+
+            System.out.println();
+
+            fileSystemManager.cd("Dir1");
+            System.out.println("cd Dir1");
+            System.out.println("Current Folder: " + fileSystemManager.getCurrentNode());
+            System.out.println();
+
+            fileSystemManager.cd("../Dir2");
+            System.out.println("cd ../Dir2");
+            System.out.println("Current Folder: " + fileSystemManager.getCurrentNode());
+            System.out.println();
+
+            fileSystemManager.cd("");
+            System.out.println("cd");
+            System.out.println("Current Folder: " + fileSystemManager.getCurrentNode());
+            System.out.println();
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -107,6 +124,10 @@ public class FileSystemManager {
     }
 
     private ArrayList<String> createPathList(String path) {
+        // "cd [nothing]" is equivalent to "cd ~"
+        if (path.isEmpty()) {
+            path += "~";
+        }
         StringBuilder builder = new StringBuilder();
         ArrayList<String> pathList = new ArrayList<>();
 
@@ -127,6 +148,10 @@ public class FileSystemManager {
         pathList.add(builder.toString());
 
         return pathList;
+    }
+
+    public String getCurrentNode() {
+        return fileSystemTree.getCurrentNode().toString();
     }
 }
 

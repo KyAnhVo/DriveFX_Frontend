@@ -42,10 +42,7 @@ class FileSystemTree {
      * @param pathFileList the string of path aim to go to
      */
     public void cd(List<String> pathFileList) throws RuntimeException {
-        // "cd [nothing]" is equivalent to "cd ~"
-        if (pathFileList.isEmpty()) {
-            pathFileList.add("~");
-        }
+
 
         if (pathFileList.getFirst().equals("~")) {
             pathFileList.removeFirst();
@@ -59,17 +56,14 @@ class FileSystemTree {
         FileSystemNode cdNode = node;
 
         for (String pathElement : path) {
-            if (pathElement.equals(".")) {
-                continue;
-            }
-            else if (pathElement.equals("..")) {
+            if (pathElement.equals("..")) {
                 if (cdNode == null) throw new RuntimeException();
                 cdNode = cdNode.getParent();
             }
             else if (pathElement.equals("~")) {
                 throw new RuntimeException("No file named '~'");
             }
-            else {
+            else if (!pathElement.equals(".")) {
                 cdNode = cdNode.getChild(pathElement);
             }
         }
