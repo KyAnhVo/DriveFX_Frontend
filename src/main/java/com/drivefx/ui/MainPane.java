@@ -1,6 +1,7 @@
 package com.drivefx.ui;
 
 import com.drivefx.State;
+import com.drivefx.authentication.AuthenticationService;
 import javafx.beans.property.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
@@ -27,12 +28,18 @@ public class MainPane extends BorderPane {
         leftPane = new ScrollPane();
 
         this.setCenter(loginPane);
+        loginPane.prefWidthProperty().bind(State.ScreenWidth.multiply(0.8));
+
         this.setTop(topButtonBar);
+
         this.setLeft(leftPane);
+        leftPane.prefWidthProperty().bind(State.ScreenWidth.multiply(0.2));
 
-        loggedIn.addListener((observable, oldValue, newValue) -> {
 
-        });
     }
+
+
+
+
 
 }
