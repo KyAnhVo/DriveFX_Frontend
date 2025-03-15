@@ -7,7 +7,6 @@ import java.util.List;
 class FileSystemTree {
     private final FileSystemNode home;
     private FileSystemNode currentNode;
-    private final List<FileSystemNode> children;
 
     /**
      * Initialize a FileSystemTree, where a node is a file, and its children are nodes inside the file.
@@ -16,9 +15,6 @@ class FileSystemTree {
     FileSystemTree(FileSystemNode home) {
         this.home = home;
         this.currentNode = home;
-        this.children = new ArrayList<>();
-
-        children.addAll(home.getChildren());
     }
 
     FileSystemNode getHome() {
@@ -43,7 +39,7 @@ class FileSystemTree {
 
     /**
      * cd to the stated path, or throws IOException if path does not exist. If path is empty, currentNode = home.
-     * @param path the string of path aim to go to
+     * @param pathFileList the string of path aim to go to
      */
     public void cd(List<String> pathFileList) throws RuntimeException {
         // "cd [nothing]" is equivalent to "cd ~"
@@ -85,8 +81,6 @@ class FileSystemTree {
         if (node == null) throw new RuntimeException("File cannot be null");
         if (!node.isDirectory) throw new RuntimeException("File must be a directory");
         this.currentNode = node;
-        this.children.clear();
-        this.children.addAll(currentNode.getChildren());
     }
 
     public void addFile(String name, boolean isDir) throws IOException {
