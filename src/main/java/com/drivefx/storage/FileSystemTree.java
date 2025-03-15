@@ -77,15 +77,6 @@ class FileSystemTree {
         this.currentNode = node;
     }
 
-    public void addFile(String name, boolean isDir) throws IOException {
-        if (isDir && !name.endsWith("/"))
-            throw new IOException("Directory name must end with '/'");
-        if (!isDir && name.endsWith("/"))
-            throw new IOException("Non-directory name must not end with '/'");
-
-        // TODO: Implement method.
-    }
-
     public String toString() {
         StringBuilder sb = new StringBuilder();
         toStringRecursive(home, 0, sb);
