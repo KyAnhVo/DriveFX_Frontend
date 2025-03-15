@@ -97,6 +97,10 @@ public class FileSystemManager {
         return fileSystemNode;
     }
 
+    /**
+     * CD to the given path if possible.
+     * @param path
+     */
     public void cd(String path) {
         List<String> pathList = createPathList(path);
         fileSystemTree.cd(pathList);
