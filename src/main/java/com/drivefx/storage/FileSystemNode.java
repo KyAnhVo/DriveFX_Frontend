@@ -6,19 +6,23 @@ import java.util.List;
 class FileSystemNode {
     String name;
     final List<FileSystemNode> children;
+    FileSystemNode parent;
+    final boolean isDirectory;
 
-    public FileSystemNode(String name) {
+    public FileSystemNode(String name, boolean isDirectory, FileSystemNode parent) {
         this.name = name;
         children = new ArrayList<>();
+        this.isDirectory = isDirectory;
+        this.parent = parent;
     }
 
-    public FileSystemNode getChild(String name) {
+    public FileSystemNode getChild(String name) throws RuntimeException {
         for (FileSystemNode child : children) {
             if (child.name.equals(name)) {
                 return child;
             }
         }
-        return null;
+        throw new RuntimeException("No such child: " + name);
     }
 
     public void setName(String name) {
@@ -28,6 +32,11 @@ class FileSystemNode {
     public String getName() {
         return name;
     }
+
+
+    public void setParent(FileSystemNode parent) { this.parent = parent; }
+
+    public FileSystemNode getParent() { return parent; }
 
     public List<FileSystemNode> getChildren() {
         return children;
