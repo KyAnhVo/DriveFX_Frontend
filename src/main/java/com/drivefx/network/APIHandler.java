@@ -1,4 +1,4 @@
-package project.drivefx.backend.apiHandler;
+package com.drivefx.network;
 import java.io.*;
 import java.net.*;
 import org.json.JSONObject;
@@ -6,7 +6,7 @@ import org.json.JSONObject;
 public class APIHandler {
 
     public static HttpURLConnection sendHttpRequest(Jsonable object, String url, String requestMethod) throws Exception {
-        HttpURLConnection conn = setupConnection(url, requestMethod, true);
+        HttpURLConnection conn = setupConnection(url, requestMethod);
         JSONObject request = object.toJSON();
         sendRequest(conn, request);
         return conn;
@@ -42,18 +42,17 @@ public class APIHandler {
 
     /**
      * Set up connection to a website with provided endpoint, method, and doOutput boolean.
-     * @param apiEndpoint
-     * @param httpMethod
-     * @param doOutput
+     * @param apiEndpoint URL of the server that is to be communicated
+     * @param httpMethod HTTP Method: GET, POST, PUT, etc.
      * @return
      */
-    private static HttpURLConnection setupConnection(String apiEndpoint, String httpMethod, boolean doOutput) throws Exception {
+    private static HttpURLConnection setupConnection(String apiEndpoint, String httpMethod) throws Exception {
         URI uri = new URI(apiEndpoint);
         URL url = uri.toURL();
 
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod(httpMethod);
-        conn.setDoOutput(doOutput);
+        conn.setDoOutput(true);
         conn.setRequestProperty("Content-Type", "application/json");
 
         return conn;

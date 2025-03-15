@@ -1,8 +1,8 @@
-package project.drivefx.backend.directoryNavigator;
+package com.drivefx.storage;
 
 import java.io.IOException;
 
-record DirectoryTree(Node root) {
+record FileSystemTree(FileSystemNode root) {
 
     public void addFile(String name, boolean isDir) throws IOException {
         if (isDir && !name.endsWith("/"))
@@ -19,11 +19,11 @@ record DirectoryTree(Node root) {
         return sb.toString();
     }
 
-    private void toStringRecursive(Node node, int tab, StringBuilder sb) {
+    private void toStringRecursive(FileSystemNode fileSystemNode, int tab, StringBuilder sb) {
         sb.append("\t".repeat(Math.max(0, tab)));
-        sb.append(node).append("\n");
+        sb.append(fileSystemNode).append("\n");
 
-        for (Node child : node.children) {
+        for (FileSystemNode child : fileSystemNode.children) {
             toStringRecursive(child, tab + 1, sb);
         }
     }

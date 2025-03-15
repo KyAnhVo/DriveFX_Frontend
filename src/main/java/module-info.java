@@ -12,14 +12,12 @@ module project.drivefx {
 
     requires org.json;
 
-    opens project.drivefx to javafx.fxml;
-    exports project.drivefx;
-    exports project.drivefx.backend;
-    opens project.drivefx.backend to javafx.fxml;
-    exports project.drivefx.backend.directoryNavigator;
-    opens project.drivefx.backend.directoryNavigator to javafx.fxml;
-    exports project.drivefx.backend.login;
-    opens project.drivefx.backend.login to javafx.fxml;
-    exports project.drivefx.backend.apiHandler;
-    opens project.drivefx.backend.apiHandler to javafx.fxml;
+    opens com.drivefx to javafx.fxml;
+    exports com.drivefx;
+    exports com.drivefx.storage;
+    opens com.drivefx.storage to javafx.fxml;
+    exports com.drivefx.authentication;
+    opens com.drivefx.authentication to javafx.fxml;
+    exports com.drivefx.network;
+    opens com.drivefx.network to javafx.fxml;
 }

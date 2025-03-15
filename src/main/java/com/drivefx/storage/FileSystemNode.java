@@ -1,19 +1,19 @@
-package project.drivefx.backend.directoryNavigator;
+package com.drivefx.storage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Node {
+class FileSystemNode {
     String name;
-    final List<Node> children;
+    final List<FileSystemNode> children;
 
-    public Node(String name) {
+    public FileSystemNode(String name) {
         this.name = name;
-        children = new ArrayList<Node>();
+        children = new ArrayList<>();
     }
 
-    public Node getChild(String name) {
-        for (Node child : children) {
+    public FileSystemNode getChild(String name) {
+        for (FileSystemNode child : children) {
             if (child.name.equals(name)) {
                 return child;
             }
@@ -29,15 +29,15 @@ class Node {
         return name;
     }
 
-    public List<Node> getChildren() {
+    public List<FileSystemNode> getChildren() {
         return children;
     }
 
-    public void addChild(Node child) {
+    public void addChild(FileSystemNode child) {
         children.add(child);
     }
 
-    public void removeChild(Node child) {
+    public void removeChild(FileSystemNode child) {
         children.remove(child);
     }
 

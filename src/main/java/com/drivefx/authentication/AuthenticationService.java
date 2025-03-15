@@ -1,9 +1,9 @@
-package project.drivefx.backend.login;
+package com.drivefx.authentication;
 import org.json.JSONObject;
-import project.drivefx.backend.apiHandler.APIHandler;
-import project.drivefx.backend.apiHandler.Jsonable;
+import com.drivefx.network.APIHandler;
+import com.drivefx.network.Jsonable;
 
-public class LoginManager implements Jsonable {
+public class AuthenticationService implements Jsonable {
     final String email, homeDir;
     String currDir;
 
@@ -16,7 +16,7 @@ public class LoginManager implements Jsonable {
      */
     public static void main(String[] args) {
         try {
-            LoginManager user = LoginManager.login("tommyvo0406@gmail.com", "Aavn!12345");
+            AuthenticationService user = AuthenticationService.login("tommyvo0406@gmail.com", "Aavn!12345");
             System.out.println(user.toString());
         }
         catch (Exception e) {
@@ -24,7 +24,7 @@ public class LoginManager implements Jsonable {
         }
     }
 
-    public LoginManager(String email, String homeDir) {
+    public AuthenticationService(String email, String homeDir) {
         this.email = email;
         this.homeDir = homeDir;
         currDir = homeDir;
@@ -42,13 +42,13 @@ public class LoginManager implements Jsonable {
      * @return
      * @throws Exception
      */
-    public static LoginManager login(String email, String password) throws Exception {
+    public static AuthenticationService login(String email, String password) throws Exception {
         JSONObject json = APIHandler.getServerResponse(
                 APIHandler.sendHttpRequest(new LoginInfo(email, password), awsLoginInfoAPI, "POST")
         );
         String finalEmail = json.getString("email");
         String homeDir = json.getString("homeDir");
-        return new LoginManager(finalEmail, homeDir);
+        return new AuthenticationService(finalEmail, homeDir);
     }
 
     // mundanes
