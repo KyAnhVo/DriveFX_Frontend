@@ -20,7 +20,7 @@ public class FileSystemManager {
      */
     public static void main(String[] args) {
         try {
-            FileSystemManager fileSystemManager = getUserDirectoryManager(
+            FileSystemManager fileSystemManager = createFileSystemManager(
                     new AuthenticationService("tommyvo0406@gmail.com", "tommyvo0406@gmail.com/")
             );
             fileSystemManager.printDirectoryTree();
@@ -56,12 +56,13 @@ public class FileSystemManager {
     }
 
     /**
-     * Get user directory tree in JSON Object
+     * Get user FileSystemManager from user after login. This is the main way of creating FileSystemManager, not the
+     * FileSystemManager constructor.
      * @param usr  should get this after user successfully logs in.
      * @return FileSystemManager that manages file stack and overall file tree
-     * @throws Exception in sending request or receiving responds
+     * @throws Exception in sending request or receiving responds, or when json sent is troubling.
      */
-    public static FileSystemManager getUserDirectoryManager(AuthenticationService usr) throws Exception {
+    public static FileSystemManager createFileSystemManager(AuthenticationService usr) throws Exception {
         JSONObject json = APIHandler.getServerResponse(
                 APIHandler.sendHttpRequest(usr, awsDirTreeAPI, "POST")
         );
@@ -116,7 +117,7 @@ public class FileSystemManager {
 
     /**
      * CD to the given path if possible.
-     * @param path
+     * @param path path of folder wanting to cd to
      */
     public void cd(String path) {
         List<String> pathList = createPathList(path);
