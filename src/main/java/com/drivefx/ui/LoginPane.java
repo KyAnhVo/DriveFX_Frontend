@@ -70,6 +70,7 @@ public class LoginPane extends StackPane {
             errorLabel.setText(e.getMessage());
         }
         State.loggedIn.set(true);
+        System.out.println("Logged in");
     }
 
 
