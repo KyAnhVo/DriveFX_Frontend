@@ -27,7 +27,7 @@ public class LoginPane extends StackPane {
         errorLabel = new Label("");
 
         // test image
-        logo = new ImageView(new Image(getClass().getResource("/com/drivefx/images/txtFile.png").toExternalForm()));
+        logo = new ImageView(new Image(getClass().getResource("/com/drivefx/images/logo.png").toExternalForm()));
 
         // Settings for email HBox
         HBox emailBox = new HBox(emailLabel, emailField);

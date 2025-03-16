@@ -18,9 +18,13 @@ public class DirectoryNavigatePane extends TilePane {
     public DirectoryNavigatePane() throws Exception {
         super();
         views = new ArrayList<fileView>();
+
+        for (int i = 0; i < 30; i++) {
+
+        }
     }
 
-    public static class fileView extends VBox {
+    private class fileView extends VBox {
         static final String dirImgPath = "/com/drivefx/images/folder.png";
         static final String txtImgPath = "/com/drivefx/images/txtFile.png";
         Label name;
@@ -29,12 +33,12 @@ public class DirectoryNavigatePane extends TilePane {
         public fileView(String name, boolean isDir) {
             if (isDir) {
                 img = new ImageView(
-                        new Image(getClass().getResource(fileView.dirImgPath).toExternalForm())
+                        new Image(getClass().getResource(dirImgPath).toExternalForm())
                 );
             }
             else {
                 img = new ImageView(
-                        new Image(getClass().getResource("/com/drivefx/images/txtFile.png").toExternalForm())
+                        new Image(getClass().getResource(txtImgPath).toExternalForm())
                 );
             }
             img.setPreserveRatio(false);
@@ -47,7 +51,7 @@ public class DirectoryNavigatePane extends TilePane {
             img.minWidth(50);
             img.maxWidth(50);
 
-            this.name.setText(name);
+            this.name = new Label(name);
             this.name.setTextAlignment(TextAlignment.CENTER);
             this.name.setMaxWidth(70);
             this.name.setMinWidth(70);
