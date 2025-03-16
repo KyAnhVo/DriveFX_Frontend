@@ -25,7 +25,9 @@ public class LoginPane extends StackPane {
         emailLabel = new Label("Email:\t");
         passwordLabel = new Label("Password:\t");
         errorLabel = new Label("");
-        logo = new ImageView(new Image(getClass().getResource("/com/drivefx/images/logo.png").toExternalForm()));
+
+        // test image
+        logo = new ImageView(new Image(getClass().getResource("/com/drivefx/images/txtFile.png").toExternalForm()));
 
         // Settings for email HBox
         HBox emailBox = new HBox(emailLabel, emailField);
@@ -68,6 +70,7 @@ public class LoginPane extends StackPane {
             State.authenticationService = null;
             State.fileSystemManager = null;
             errorLabel.setText(e.getMessage());
+            return;
         }
         State.loggedIn.set(true);
         System.out.println("Logged in");

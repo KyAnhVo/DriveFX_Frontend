@@ -1,9 +1,7 @@
 package com.drivefx.ui;
 
 import com.drivefx.State;
-import com.drivefx.authentication.AuthenticationService;
 import javafx.beans.property.*;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
@@ -34,6 +32,8 @@ public class MainPane extends BorderPane {
 
         this.setLeft(leftPane);
         leftPane.prefWidthProperty().bind(State.ScreenWidth.multiply(0.2));
+
+        switchCenterPane();
     }
 
     private void switchCenterPane() {

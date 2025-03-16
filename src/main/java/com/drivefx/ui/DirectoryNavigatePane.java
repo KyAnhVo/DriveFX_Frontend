@@ -1,7 +1,5 @@
 package com.drivefx.ui;
 
-import com.drivefx.authentication.AuthenticationService;
-import com.drivefx.storage.FileSystemManager;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -15,21 +13,30 @@ import javafx.scene.text.TextAlignment;
 import java.util.ArrayList;
 
 public class DirectoryNavigatePane extends TilePane {
-    ArrayList<ImageView> views;
+    ArrayList<fileView> views;
 
     public DirectoryNavigatePane() throws Exception {
         super();
-        this.views = new ArrayList<>();
+        views = new ArrayList<fileView>();
     }
 
     public static class fileView extends VBox {
         static final String dirImgPath = "/com/drivefx/images/folder.png";
         static final String txtImgPath = "/com/drivefx/images/txtFile.png";
         Label name;
+        ImageView img;
 
         public fileView(String name, boolean isDir) {
-            ImageView img = new ImageView(getClass().getResource(
-                    isDir ? dirImgPath : txtImgPath).toExternalForm());
+            if (isDir) {
+                img = new ImageView(
+                        new Image(getClass().getResource(fileView.dirImgPath).toExternalForm())
+                );
+            }
+            else {
+                img = new ImageView(
+                        new Image(getClass().getResource("/com/drivefx/images/txtFile.png").toExternalForm())
+                );
+            }
             img.setPreserveRatio(false);
 
             img.setFitHeight(50);
