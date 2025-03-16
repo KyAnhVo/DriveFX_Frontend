@@ -19,9 +19,9 @@ public class MainPane extends BorderPane {
     ScrollPane leftPane;
     ButtonBar topButtonBar;
 
-    public MainPane() {
+    public MainPane() throws Exception {
         loginPane = new LoginPane();
-        directoryNavigatePane = null;
+        directoryNavigatePane = new DirectoryNavigatePane();
         loggedIn = new SimpleBooleanProperty();
         loggedIn.bind(State.loggedIn);
         topButtonBar = new ButtonBar();
@@ -34,11 +34,20 @@ public class MainPane extends BorderPane {
 
         this.setLeft(leftPane);
         leftPane.prefWidthProperty().bind(State.ScreenWidth.multiply(0.2));
-
-
     }
 
-
+    private void switchCenterPane() {
+        State.loggedIn.addListener((observable, oldValue, newValue) -> {
+            // if loggedIn is switched to true (logged in), swap to directory navigator
+            if (newValue && !oldValue) {
+                this.setCenter(directoryNavigatePane);
+            }
+            // if loggedIn is switched to false (logged out), swap to log in pane
+            else if (!newValue && oldValue) {
+                this.setCenter(loginPane);
+            }
+        });
+    }
 
 
 
