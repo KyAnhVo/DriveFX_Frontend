@@ -151,8 +151,8 @@ public class FileSystemManager {
         return pathList;
     }
 
-    public String getCurrentNode() {
-        return fileSystemTree.getCurrentNode().toString();
+    public FileSystemNode getCurrentNode() {
+        return fileSystemTree.getCurrentNode();
     }
 }
 

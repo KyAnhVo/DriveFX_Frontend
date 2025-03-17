@@ -1,6 +1,7 @@
 package com.drivefx.ui;
 
 import com.drivefx.State;
+import com.drivefx.storage.FileSystemManager;
 import javafx.beans.property.*;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ScrollPane;
@@ -19,7 +20,7 @@ public class MainPane extends BorderPane {
 
     public MainPane() throws Exception {
         loginPane = new LoginPane();
-        directoryNavigatePane = new DirectoryNavigatePane();
+        directoryNavigatePane = null;
         loggedIn = new SimpleBooleanProperty();
         loggedIn.bind(State.loggedIn);
         topButtonBar = new ButtonBar();
@@ -40,7 +41,17 @@ public class MainPane extends BorderPane {
         State.loggedIn.addListener((observable, oldValue, newValue) -> {
             // if loggedIn is switched to true (logged in), swap to directory navigator
             if (newValue && !oldValue) {
-                this.setCenter(directoryNavigatePane);
+                try {
+                    State.fileSystemManager = FileSystemManager.createFileSystemManager(State.authenticationService);
+                    this.directoryNavigatePane = new DirectoryNavigatePane();
+                    this.setCenter(directoryNavigatePane);
+                }
+                catch (Exception e) {
+                    State.authenticationService = null;
+                    State.loggedIn.set(false);
+                    State.fileSystemManager = null;
+                }
+
             }
             // if loggedIn is switched to false (logged out), swap to log in pane
             else if (!newValue && oldValue) {

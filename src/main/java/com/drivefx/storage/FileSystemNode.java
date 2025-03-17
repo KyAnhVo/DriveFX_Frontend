@@ -3,11 +3,11 @@ package com.drivefx.storage;
 import java.util.ArrayList;
 import java.util.List;
 
-class FileSystemNode {
+public class FileSystemNode {
     String name;
     final List<FileSystemNode> children;
     FileSystemNode parent;
-    final boolean isDirectory;
+    public final boolean isDirectory;
 
     public FileSystemNode(String name, boolean isDirectory, FileSystemNode parent) {
         this.name = name;

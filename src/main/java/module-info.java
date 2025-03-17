@@ -11,6 +11,7 @@ module project.drivefx {
     requires java.compiler;
 
     requires org.json;
+    requires javafx.graphics;
 
     opens com.drivefx to javafx.fxml;
     exports com.drivefx;
