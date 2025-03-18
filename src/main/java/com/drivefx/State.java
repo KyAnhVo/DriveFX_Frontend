@@ -25,9 +25,12 @@ public class State {
      */
     public final static IntegerProperty ScreenWidth = new SimpleIntegerProperty(0);
 
+    /**
+     * true if user is accessing a txt file, false otherwise
+     */
+    public final static BooleanProperty editingFile = new SimpleBooleanProperty(false);
+
     // Logic backend
-
-
     public static AuthenticationService authenticationService = null;
     public static FileSystemManager fileSystemManager = null;
 }

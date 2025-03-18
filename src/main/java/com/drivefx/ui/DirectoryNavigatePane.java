@@ -61,6 +61,8 @@ public class DirectoryNavigatePane extends TilePane {
         }
     }
 
+
+
     /**
      * A VBox that has an icon for directory or txt file, and a name.
      */
@@ -112,6 +114,9 @@ public class DirectoryNavigatePane extends TilePane {
 
             this.setOnMouseClicked(e -> {
                 if (isDir) cd(this.name.getText());
+                else {
+                    State.editingFile.set(true);
+                }
             });
             this.setOnMouseEntered(e -> {
                 this.setStyle("-fx-background-color: lightblue;");
