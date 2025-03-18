@@ -19,8 +19,8 @@ public class DriveFX extends Application {
         stage.setTitle("Drive FX");
 
         stage.setResizable(true);
-        stage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 2);
-        stage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 2);
+        stage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 1.5);
+        stage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 1.5);
 
         Scene scene = new Scene(new MainPane());
         statesBinding(scene);

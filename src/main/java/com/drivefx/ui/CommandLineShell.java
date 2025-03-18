@@ -2,12 +2,13 @@ package com.drivefx.ui;
 
 import com.drivefx.State;
 import javafx.scene.control.TextArea;
-import javafx.scene.paint.Paint;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
-import java.awt.*;
+
 import java.util.Stack;
 
-public class CommandLineShell extends TextArea implements Runnable {
+public class CommandLineShell extends TextArea{
     Stack<String> pastCalls = new Stack<>();
     int promptPosition = 0;
 
@@ -15,8 +16,19 @@ public class CommandLineShell extends TextArea implements Runnable {
         super();
         this.setEditable(true);
         this.setWrapText(true);
-        this.prefHeightProperty().bind(State.ScreenHeight.multiply(0.2));
-        this.setText("~/>");
+        this.prefHeightProperty().bind(State.ScreenHeight.multiply(0.33));
+
+
+        // add text, move cursor forward
+        this.appendText(
+                "COMMAND LINE SHELL - V1.0\n"
+                        +"Command line shell for DriveFX.\n"
+                        + "~/>"
+        );
+        this.positionCaret(this.getText().length());
+        this.promptPosition = this.getCaretPosition();
+        this.keyIntercept();
+
 
         // miscellaneous
         this.setStyle("-fx-control-inner-background: #333333; " +  // Dark grey background
@@ -28,8 +40,30 @@ public class CommandLineShell extends TextArea implements Runnable {
                 "-fx-highlight-text-fill: #FFFFFF;");
     }
 
-    @Override
-    public void run() {
+    private void keyIntercept() {
+        this.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+            KeyCode keyCode = event.getCode();
+            int anchorPosition = this.getSelection().getStart();
 
+            if (keyCode == KeyCode.ENTER) {
+                this.appendText("\n");
+                this.appendText("~/>");
+                this.positionCaret(this.getText().length());
+                this.promptPosition = this.getCaretPosition();
+            }
+            else if (keyCode == KeyCode.BACK_SPACE) {
+                if (anchorPosition <= promptPosition) {
+                    event.consume();
+                }
+            }
+            else if (keyCode == KeyCode.DELETE) {
+                if (anchorPosition <  promptPosition) {
+                    event.consume();
+                }
+            }
+
+        });
     }
+
+
 }

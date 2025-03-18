@@ -1,5 +1,6 @@
 package com.drivefx.ui;
 
+import com.drivefx.State;
 import com.drivefx.authentication.AuthenticationService;
 import com.drivefx.storage.FileSystemManager;
 import javafx.application.Platform;
@@ -38,14 +39,14 @@ public class LoginPane extends StackPane {
         logo = new ImageView(
                 new Image(getClass().getResource("/com/drivefx/images/logo.png").toExternalForm()));
         logo.setPreserveRatio(true);
-        logo.fitHeightProperty().bind(this.heightProperty().divide(8));
+        logo.setFitHeight(50);
         logo.setVisible(true);
 
         // loadingGif
         loadingGif = new ImageView(
                 new Image(getClass().getResource("/com/drivefx/images/loading.gif").toExternalForm()));
         loadingGif.setPreserveRatio(true);
-        loadingGif.fitHeightProperty().bind(heightProperty().divide(3));
+        loadingGif.fitHeightProperty().bind(heightProperty().divide(5));
         loadingGif.setVisible(false);
 
         // Settings for email HBox
