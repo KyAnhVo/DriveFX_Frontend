@@ -3,8 +3,8 @@ package com.drivefx.ui;
 import com.drivefx.State;
 import com.drivefx.storage.FileSystemManager;
 import javafx.beans.property.*;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ScrollPane;
+import javafx.geometry.Orientation;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
 /**
@@ -14,25 +14,26 @@ public class MainPane extends BorderPane {
     BooleanProperty loggedIn;
     LoginPane loginPane;
     DirectoryNavigatePane directoryNavigatePane;
+    CommandLineShell commandLineShell;
 
     ScrollPane leftPane;
-    ButtonBar topButtonBar;
+    MenuBar menuBar;
 
     public MainPane() throws Exception {
         loginPane = new LoginPane();
         directoryNavigatePane = null;
         loggedIn = new SimpleBooleanProperty();
         loggedIn.bind(State.loggedIn);
-        topButtonBar = new ButtonBar();
+        menuBar = new MenuBar();
         leftPane = new ScrollPane();
+        commandLineShell = new  CommandLineShell();
+
+        // TODO: implement menuBar
+        menuBar.getMenus().add(new Menu("File"));
 
         this.setCenter(loginPane);
-        loginPane.prefWidthProperty().bind(State.ScreenWidth.multiply(0.8));
-
-        this.setTop(topButtonBar);
-
-        this.setLeft(leftPane);
-        leftPane.prefWidthProperty().bind(State.ScreenWidth.multiply(0.2));
+        this.setTop(menuBar);
+        this.setBottom(commandLineShell);
 
         switchCenterPane();
     }

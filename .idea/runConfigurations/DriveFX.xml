@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DriveFX" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.drivefx.DriveFX" />
+    <module name="DriveFX" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

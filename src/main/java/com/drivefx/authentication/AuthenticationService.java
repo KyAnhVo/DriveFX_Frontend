@@ -25,10 +25,10 @@ public record AuthenticationService(String email, String homeDir) implements Jso
      * Login using user's email and password. If credentials are good, return. If credentials are bad,
      * throw error.
      *
-     * @param email
-     * @param password
-     * @return
-     * @throws Exception
+     * @param email email
+     * @param password password
+     * @return AuthenticationService that has email and root dir
+     * @throws Exception if API Handler throws error (Web error mostly)
      */
     public static AuthenticationService login(String email, String password) throws Exception {
         JSONObject json = APIHandler.getServerResponse(
