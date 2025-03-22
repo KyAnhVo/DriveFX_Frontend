@@ -1,5 +1,6 @@
 package com.drivefx.storage;
 
+import com.drivefx.State;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.drivefx.network.APIHandler;
@@ -10,7 +11,6 @@ import java.util.List;
 
 
 public class FileSystemManager {
-    final static String awsDirTreeAPI = "https://99xoiya6k2.execute-api.us-east-2.amazonaws.com/default/getDirectoryTree";
 
     final FileSystemTree fileSystemTree;
 
@@ -64,7 +64,7 @@ public class FileSystemManager {
      */
     public static FileSystemManager createFileSystemManager(AuthenticationService usr) throws Exception {
         JSONObject json = APIHandler.getServerResponse(
-                APIHandler.sendHttpRequest(usr, awsDirTreeAPI, "POST")
+                APIHandler.sendHttpRequest(usr, State.awsDirTreeAPI, "POST")
         );
         FileSystemTree tree = createFileSystemTree(json);
 

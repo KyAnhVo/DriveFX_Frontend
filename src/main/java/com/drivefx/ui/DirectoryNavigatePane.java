@@ -110,12 +110,17 @@ public class DirectoryNavigatePane extends TilePane {
             this.setAlignment(Pos.CENTER);
             this.getChildren().addAll(img, this.name);
 
-            // mouse behaviour on node
+            mouseBehaviour(isDir);
+        }
 
+        private void mouseBehaviour(boolean isDir) {
+            // mouse behaviour on node
             this.setOnMouseClicked(e -> {
                 if (isDir) cd(this.name.getText());
                 else {
+                    State.awsFilepath.set(this.name.getText());
                     State.editingFile.set(true);
+
                 }
             });
             this.setOnMouseEntered(e -> {

@@ -1,11 +1,10 @@
 package com.drivefx.authentication;
+import com.drivefx.State;
 import org.json.JSONObject;
 import com.drivefx.network.APIHandler;
 import com.drivefx.network.Jsonable;
 
 public record AuthenticationService(String email, String homeDir) implements Jsonable {
-    final static String awsLoginInfoAPI =
-            "https://xdrp5nonz8.execute-api.us-east-2.amazonaws.com/default/getUserLoginInfo";
 
     /**
      * FOR DEBUG AND TESTING ONLY
@@ -32,7 +31,7 @@ public record AuthenticationService(String email, String homeDir) implements Jso
      */
     public static AuthenticationService login(String email, String password) throws Exception {
         JSONObject json = APIHandler.getServerResponse(
-                APIHandler.sendHttpRequest(new LoginInfo(email, password), awsLoginInfoAPI, "POST")
+                APIHandler.sendHttpRequest(new LoginInfo(email, password), State.awsLoginAPI, "POST")
         );
         String finalEmail = json.getString("email");
         String homeDir = json.getString("homeDir");

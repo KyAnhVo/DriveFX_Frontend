@@ -10,9 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DriveFX extends Application {
-    public static void main(String[] args) {
-        launch();
-    }
+    public static void main(String[] args) { launch(); }
 
     @Override
     public void start(Stage stage) throws Exception {

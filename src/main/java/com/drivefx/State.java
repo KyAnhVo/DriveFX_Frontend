@@ -30,6 +30,18 @@ public class State {
      */
     public final static BooleanProperty editingFile = new SimpleBooleanProperty(false);
 
+    // URLs
+    public final static String awsLoginAPI =
+            "https://xdrp5nonz8.execute-api.us-east-2.amazonaws.com/default/getUserLoginInfo";
+    public final static String awsDirTreeAPI =
+            "https://99xoiya6k2.execute-api.us-east-2.amazonaws.com/default/getDirectoryTree";
+    public final static String awsDownloadFileAPI =
+            "";
+
+    // Opening files
+    public static final StringProperty awsFilepath = new SimpleStringProperty("");
+    public static final String tempFilesDirPath = "src/main/resources/com/drivefx/temp_edit_file";
+
     // Logic backend
     public static AuthenticationService authenticationService = null;
     public static FileSystemManager fileSystemManager = null;
