@@ -24,6 +24,10 @@ public class FileReadersPane extends TabPane {
         this.getSelectionModel().select(newTab);
     }
 
+    public void onClosing() throws Exception {
+        
+    }
+
     public static class FileReadersTab extends Tab {
         String awsFilename, tempFilename, awsFilenameNoPath;
         VBox rootBox;
