@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class DirectoryNavigatePane extends TilePane {
-    ArrayList<FileView> views;
+    public final ArrayList<FileView> views;
 
     public DirectoryNavigatePane() throws Exception {
         super();
@@ -61,12 +61,10 @@ public class DirectoryNavigatePane extends TilePane {
         }
     }
 
-
-
     /**
      * A VBox that has an icon for directory or txt file, and a name.
      */
-    private class FileView extends VBox {
+    public class FileView extends VBox {
         static final String dirImgPath = "/com/drivefx/images/folder.png";
         static final String txtImgPath = "/com/drivefx/images/txtFile.png";
         Label name;

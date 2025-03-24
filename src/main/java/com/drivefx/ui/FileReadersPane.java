@@ -20,10 +20,11 @@ public class FileReadersPane extends TabPane {
         APIHandler.downloadFile(presignedURL, localFilename);
 
         FileReadersTab newTab = new FileReadersTab(awsFilename, localFilename);
-
+        this.getTabs().add(newTab);
+        this.getSelectionModel().select(newTab);
     }
 
-    public class FileReadersTab extends Tab {
+    public static class FileReadersTab extends Tab {
         String awsFilename, tempFilename, awsFilenameNoPath;
         VBox rootBox;
 

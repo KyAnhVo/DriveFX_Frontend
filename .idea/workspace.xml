@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c1107f8-6bd0-4422-8ef8-dae26ffa5ae5" name="Changes" comment="sfdasf">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/FileReadersPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/DriveFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/DriveFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/authentication/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/authentication/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/network/APIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/network/APIHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/storage/FileSystemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/storage/FileSystemManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/DirectoryNavigatePane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/DirectoryNavigatePane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/MainPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/MainPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/DriveFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/DriveFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService$LoginInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService$LoginInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/network/APIHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/network/APIHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/storage/FileSystemManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/storage/FileSystemManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$fileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$fileView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/MainPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/MainPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/FileReadersPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/FileReadersPane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +31,12 @@
     &quot;assignee&quot;: &quot;KyAnhVo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/KyAnhVo/DriveFX_Frontend.git",
-    "accountId": "d4823345-a838-4512-b7a9-55e09df4e82d"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KyAnhVo/DriveFX_Frontend.git&quot;,
+    &quot;accountId&quot;: &quot;d4823345-a838-4512-b7a9-55e09df4e82d&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -118,6 +104,8 @@
       <workItem from="1742436413978" duration="2799000" />
       <workItem from="1742491311887" duration="9249000" />
       <workItem from="1742667851259" duration="2346000" />
+      <workItem from="1742769519285" duration="1559000" />
+      <workItem from="1742781426392" duration="1508000" />
     </task>
     <task id="LOCAL-00002" summary="sfdasf">
       <option name="closed" value="true" />

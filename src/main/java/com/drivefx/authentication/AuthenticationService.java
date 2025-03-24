@@ -52,7 +52,6 @@ public record AuthenticationService(String email, String homeDir) implements Jso
 
     /**
      * Used to parse Jsonable object into APIHandler's methods
-     *
      * @param email    email of user
      * @param password password of user
      */
