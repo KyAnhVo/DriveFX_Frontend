@@ -6,20 +6,23 @@ import javafx.concurrent.Task;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
+import java.io.File;
 import java.io.FileInputStream;
 
 public class FileReadersPane extends TabPane {
-    private int tempFiles = 0;
-
     public FileReadersPane() {}
 
     public void addFile(String awsFilename) throws Exception {
-        String localFilename = "temp_file_" + tempFiles + ".txt";
-        tempFiles++;
-        String presignedURL = APIHandler.getPresignedURLDownload(awsFilename, State.awsDownloadFileAPI);
-        APIHandler.downloadFile(presignedURL, localFilename);
+        String tempFileName;
+        int tempNum = 0;
+        while (!(new File(com.drivefx.State.tempFilesDirPath + tempNum)).exists())
+            tempNum++;
+        tempFileName = com.drivefx.State.tempFilesDirPath + tempNum;
 
-        FileReadersTab newTab = new FileReadersTab(awsFilename, localFilename);
+        String presignedURL = APIHandler.getPresignedURLDownload(awsFilename, State.awsDownloadFileAPI);
+        APIHandler.downloadFile(presignedURL, tempFileName);
+
+        FileReadersTab newTab = new FileReadersTab(awsFilename, tempFileName);
         this.getTabs().add(newTab);
         this.getSelectionModel().select(newTab);
     }

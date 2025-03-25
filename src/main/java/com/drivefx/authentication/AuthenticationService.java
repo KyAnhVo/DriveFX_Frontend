@@ -47,6 +47,7 @@ public record AuthenticationService(String email, String homeDir) implements Jso
         JSONObject json = new JSONObject();
         json.put("email", email);
         json.put("homeDir", homeDir);
+        json.put("function", "getDirTree");
         return json;
     }
 
@@ -61,6 +62,7 @@ public record AuthenticationService(String email, String homeDir) implements Jso
             JSONObject json = new JSONObject();
             json.put("email", this.email);
             json.put("password", this.password);
+            json.put("function", "login");
             return json;
         }
     }

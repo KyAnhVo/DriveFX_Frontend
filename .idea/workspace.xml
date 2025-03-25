@@ -6,7 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="2c1107f8-6bd0-4422-8ef8-dae26ffa5ae5" name="Changes" comment="sfdasf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/authentication/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/authentication/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/storage/FileSystemNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/storage/FileSystemNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/DirectoryNavigatePane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/DirectoryNavigatePane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/FileReadersPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/FileReadersPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/MainPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/MainPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService$LoginInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService$LoginInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/authentication/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/storage/FileSystemNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/storage/FileSystemNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$fileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$fileView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/MainPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/MainPane.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +122,10 @@
       <workItem from="1742667851259" duration="2346000" />
       <workItem from="1742769519285" duration="1559000" />
       <workItem from="1742781426392" duration="2513000" />
+      <workItem from="1742851292695" duration="390000" />
+      <workItem from="1742866511214" duration="2349000" />
+      <workItem from="1742880298229" duration="1045000" />
+      <workItem from="1742934295016" duration="2887000" />
     </task>
     <task id="LOCAL-00002" summary="sfdasf">
       <option name="closed" value="true" />

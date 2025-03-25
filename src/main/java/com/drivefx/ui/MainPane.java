@@ -67,7 +67,7 @@ public class MainPane extends BorderPane {
             if (newValue && !oldValue) {
                 try {
                     State.fileSystemManager = FileSystemManager.createFileSystemManager(State.authenticationService);
-                    this.directoryNavigatePane = new DirectoryNavigatePane();
+                    this.directoryNavigatePane = new DirectoryNavigatePane(fileReadersPane);
                     this.setCenter(this.directoryNavigatePane);
 
                     for (Menu menu : menuBar.getMenus()) {

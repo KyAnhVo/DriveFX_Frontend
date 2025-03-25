@@ -1,5 +1,7 @@
 package com.drivefx.storage;
 
+import com.drivefx.State;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,32 @@ public class FileSystemNode {
             }
         }
         throw new RuntimeException("No such child: " + name);
+    }
+
+    public String getAwsPath() throws Exception {
+        FileSystemNode currentNode = this.parent;
+
+        // manage this file
+        String awsPath = this.name;
+        if (this.isDirectory) {
+            awsPath += "/";
+        }
+
+        // if this is root, do not run.
+        while (currentNode != null) {
+            if (currentNode.isDirectory) { // parent folder, non-root
+                awsPath = currentNode.getName() + "/" + awsPath;
+            }
+            else { // parent "file", error
+                throw new RuntimeException("No such awsPath: " + awsPath);
+            }
+            currentNode = currentNode.parent;
+        }
+
+        // replace '~' with actual root name
+        awsPath = awsPath.replaceFirst("~", State.authenticationService.homeDir());
+
+        return awsPath;
     }
 
     public void setName(String name) {
