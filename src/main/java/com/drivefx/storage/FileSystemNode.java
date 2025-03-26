@@ -48,7 +48,7 @@ public class FileSystemNode {
         }
 
         // replace '~' with actual root name
-        awsPath = awsPath.replaceFirst("~", State.authenticationService.homeDir());
+        awsPath = awsPath.replaceFirst("~/", State.authenticationService.homeDir());
 
         return awsPath;
     }

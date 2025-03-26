@@ -82,16 +82,31 @@ public class APIHandler {
     public static String getPresignedURLDownload(String filename, String functionUrl) throws Exception {
         String result = "";
 
-        HttpURLConnection conn = APIHandler.setupConnection(functionUrl, "GET");
+        System.out.println("\nEnter APIHandler presigned URL");
+        System.out.println(filename);
+        System.out.println(functionUrl);
+
+        HttpURLConnection conn = APIHandler.setupConnection(functionUrl, "POST");
 
         JSONObject jsonPackage = new JSONObject();
         jsonPackage.put("filename", filename);
 
         APIHandler.sendRequest(conn, jsonPackage);
 
-        JSONObject response = new JSONObject(APIHandler.getServerResponse(conn));
-        result = response.getString("url");
+        JSONObject response;
+        try {
+            response = APIHandler.getServerResponse(conn);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
 
+
+
+        result = response.getString("file");
+        System.out.println(result);
+        System.out.println("Exit APIHandler presigned URL\n");
 
         return result;
     }
@@ -102,40 +117,33 @@ public class APIHandler {
      * @param name path, relative to project file (DriveFX)
      */
     public static void downloadFile(String presignedUrl, String name) throws Exception {
+        System.out.println("\nEnter APIHandler download file");
+        System.out.println(presignedUrl);
+        System.out.println(name);
+        System.out.println("Current dir: " + System.getProperty("user.dir"));
+
+        String savePath = name;
+
         URI uri = new URI(presignedUrl);
         HttpURLConnection conn = (HttpURLConnection) uri.toURL().openConnection();
         conn.setRequestMethod("GET");
+        InputStream inpStream = conn.getInputStream();
 
-        int responseCode = conn.getResponseCode();
-        switch (responseCode) {
-            case HttpURLConnection.HTTP_OK:
-                InputStream inpStream = conn.getInputStream();
-                FileOutputStream outStream = new FileOutputStream(new File(
-                        State.tempFilesDirPath + name));
+        System.out.println("Create file");
 
-                byte[] buffer = new byte[4096];
-                int bytesRead;
+        FileOutputStream outStream = new FileOutputStream(new File(savePath));
 
-                while ((bytesRead = inpStream.read(buffer)) != -1) {
-                    outStream.write(buffer, 0, bytesRead);
-                }
+        System.out.println("Finished setup");
 
-                outStream.flush();
-                outStream.close();
-                inpStream.close();
-                break;
+        byte[] buffer = new byte[4096];
+        int bytesRead;
 
-            case HttpURLConnection.HTTP_NOT_FOUND:
-                throw new FileNotFoundException("File not found");
-
-            case HttpURLConnection.HTTP_INTERNAL_ERROR:
-                throw new RuntimeException("Server error");
-
-            case HttpURLConnection.HTTP_UNAUTHORIZED:
-                throw new RuntimeException("Login credentials incorrect");
-
-            default:
-                throw new Exception("Unhandled Error: " + responseCode);
+        while ((bytesRead = inpStream.read(buffer)) != -1) {
+            outStream.write(buffer, 0, bytesRead);
         }
+
+        outStream.flush();
+        outStream.close();
+        inpStream.close();
     }
 }

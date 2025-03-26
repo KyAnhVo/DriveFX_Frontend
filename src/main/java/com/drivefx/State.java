@@ -36,11 +36,11 @@ public class State {
     public final static String awsDirTreeAPI =
             "https://99xoiya6k2.execute-api.us-east-2.amazonaws.com/default/getDirectoryTree";
     public final static String awsDownloadFileAPI =
-            "";
+            "https://9yq06yckqc.execute-api.us-east-2.amazonaws.com/default/getFilePresignedUrl";
 
     // Opening files
     public static final StringProperty awsFilepath = new SimpleStringProperty("");
-    public static final String tempFilesDirPath = "src/main/resources/com/drivefx/temp_edit_file";
+    public static final String tempFilesDirPath = "temp_file/";
 
     // Logic backend
     public static AuthenticationService authenticationService = null;

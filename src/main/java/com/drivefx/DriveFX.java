@@ -8,12 +8,23 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class DriveFX extends Application {
     public static void main(String[] args) { launch(); }
 
     @Override
     public void start(Stage stage) throws Exception {
+        Path dirPath = Paths.get("temp_file");
+        try {
+            Files.createDirectory(dirPath);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
         stage.setTitle("Drive FX");
 
         stage.setResizable(true);

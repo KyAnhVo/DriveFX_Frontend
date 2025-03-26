@@ -139,6 +139,8 @@ public class DirectoryNavigatePane extends TilePane {
                         throw new RuntimeException(ex);
                     }
 
+                    System.out.println(awsPath);
+
                     // if file is opened, go to that file
                     for (Tab tab : fileReadersPane.getTabs()) {
                         FileReadersPane.FileReadersTab frTab = (FileReadersPane.FileReadersTab) tab;
@@ -148,14 +150,27 @@ public class DirectoryNavigatePane extends TilePane {
                         }
                     }
 
+
+
                     // else, download from aws, add tab, and switch to that tab.
                     Task<String> task = new Task<>() {
                         @Override
                         protected String call() throws Exception {
                             fileReadersPane.addFile(awsPath);
+
                             return awsPath;
                         }
                     };
+
+                    task.setOnSucceeded(success -> {
+                        com.drivefx.State.editingFile.set(true);
+                    });
+
+                    System.out.println("Prepare to start thread");
+
+                    Thread thread = new Thread(task);
+                    thread.setDaemon(true);
+                    thread.start();
                 }
             });
             this.setOnMouseEntered(e -> {

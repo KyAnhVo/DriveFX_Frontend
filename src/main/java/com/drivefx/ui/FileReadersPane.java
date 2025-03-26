@@ -13,11 +13,15 @@ public class FileReadersPane extends TabPane {
     public FileReadersPane() {}
 
     public void addFile(String awsFilename) throws Exception {
+        System.out.println(awsFilename);
+
         String tempFileName;
         int tempNum = 0;
-        while (!(new File(com.drivefx.State.tempFilesDirPath + tempNum)).exists())
+        while ((new File(com.drivefx.State.tempFilesDirPath + tempNum)).exists())
             tempNum++;
         tempFileName = com.drivefx.State.tempFilesDirPath + tempNum;
+
+        System.out.println(tempFileName);
 
         String presignedURL = APIHandler.getPresignedURLDownload(awsFilename, State.awsDownloadFileAPI);
         APIHandler.downloadFile(presignedURL, tempFileName);
@@ -68,7 +72,7 @@ public class FileReadersPane extends TabPane {
                 @Override
                 protected String call() throws Exception {
                     try {
-                        FileInputStream fileReader = new FileInputStream(com.drivefx.State.tempFilesDirPath + tempFilename);
+                        FileInputStream fileReader = new FileInputStream(tempFilename);
                         String fileContents = new String(fileReader.readAllBytes());
                         fileReader.close();
                         return fileContents;
