@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,8 +23,12 @@ public class DriveFX extends Application {
             Files.createDirectory(dirPath);
         }
         catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("File is already created");
         }
+
+        stage.setOnCloseRequest(event -> {
+            deleteDirectory(new File("temp_file"));
+        });
 
         stage.setTitle("Drive FX");
 
@@ -41,5 +46,15 @@ public class DriveFX extends Application {
     public void statesBinding(Scene scene) {
         State.ScreenHeight.bind(scene.heightProperty());
         State.ScreenWidth.bind(scene.widthProperty());
+    }
+
+    private void deleteDirectory(File dir) {
+        if (dir.exists() && dir.isDirectory()) {
+            for (File file : dir.listFiles()) {
+                deleteDirectory(file);
+            }
+        }
+        dir.delete();
+        System.out.println("Deleted " + dir.getAbsolutePath());
     }
 }

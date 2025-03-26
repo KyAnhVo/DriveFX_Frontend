@@ -146,6 +146,7 @@ public class DirectoryNavigatePane extends TilePane {
                         FileReadersPane.FileReadersTab frTab = (FileReadersPane.FileReadersTab) tab;
                         if (frTab.awsFilename.equals(awsPath)) {
                             fileReadersPane.getSelectionModel().select(frTab);
+                            State.editingFile.set(true);
                             return;
                         }
                     }

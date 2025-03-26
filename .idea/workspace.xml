@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c1107f8-6bd0-4422-8ef8-dae26ffa5ae5" name="Changes" comment="sfdasf">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/Test.java" afterDir="false" />
+    <list default="true" id="2c1107f8-6bd0-4422-8ef8-dae26ffa5ae5" name="Changes" comment="Opened a file successfully.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/DriveFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/DriveFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/network/APIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/network/APIHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/storage/FileSystemNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/storage/FileSystemNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/DirectoryNavigatePane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/DirectoryNavigatePane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/FileReadersPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/drivefx/ui/FileReadersPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/DriveFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/DriveFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/network/APIHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/network/APIHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/storage/FileSystemNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/storage/FileSystemNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$FileView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$FileView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$fileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/DirectoryNavigatePane$fileView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane$FileReadersTab.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/drivefx/ui/FileReadersPane.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +36,12 @@
     &quot;assignee&quot;: &quot;KyAnhVo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/KyAnhVo/DriveFX_Frontend.git&quot;,
-    &quot;accountId&quot;: &quot;d4823345-a838-4512-b7a9-55e09df4e82d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/KyAnhVo/DriveFX_Frontend.git",
+    "accountId": "4b710b71-e9f0-4795-aa92-7c84fadf10d0"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -66,23 +53,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DriveFX.executor": "Run",
-    "Application.Test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vokya/OneDrive/Desktop/Projects/DriveFX/src/main/resources/com/drivefx",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DriveFX.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vokya/OneDrive/Desktop/Projects/DriveFX/src/main/resources/com/drivefx&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vokya\OneDrive\Desktop\Projects\DriveFX\src\main\resources\com\drivefx" />
@@ -94,8 +81,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.227" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.227" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
       </set>
     </attachedChunks>
   </component>
@@ -129,7 +116,8 @@
       <workItem from="1742866511214" duration="2349000" />
       <workItem from="1742880298229" duration="1045000" />
       <workItem from="1742934295016" duration="6720000" />
-      <workItem from="1742945553829" duration="9744000" />
+      <workItem from="1742945553829" duration="11511000" />
+      <workItem from="1743002030029" duration="2114000" />
     </task>
     <task id="LOCAL-00002" summary="sfdasf">
       <option name="closed" value="true" />
@@ -163,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742937287071</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Opened a file successfully.">
+      <option name="closed" value="true" />
+      <created>1742960213636</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742960213636</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,14 +167,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sfdasf" />
-    <option name="LAST_COMMIT_MESSAGE" value="sfdasf" />
+    <MESSAGE value="Opened a file successfully." />
+    <option name="LAST_COMMIT_MESSAGE" value="Opened a file successfully." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/drivefx/network/APIHandler.java</url>
-          <line>90</line>
+          <line>103</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
